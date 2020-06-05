@@ -2,28 +2,32 @@
 
 Modulo Perfil para mascotas.
 
-## Esta librería se incluye en package.json como
+## Modo de uso
 
 ```bash
     "mascotas_react_profile": "git+https://github.com/nmarsollier/mascotas_react_profile.git#master",
 ```
 
-## Cuando queramos usar la version local
+## Dependencias
 
-en modo desarrollador, ejecutamos en mascotas_react_app :
+Esta librería no incluye dependencias internas, todas las dependencias definidas en package.json como devDependencies  deben ser incluidas en el proyecto mascotas_react_app como dependencies
+
+## Uso local
+
+En el proyecto donde quedamos usar este modulo, debemos cambiar
 
 ```bash
-    npm link ../mascotas_react_profile
+    "mascotas_react_profile": "git+https://github.com/nmarsollier/mascotas_react_profile.git#master",
 ```
 
-Desarrollamos normalmente en la librería, cuando tenemos los cambios listos para probar ejecutamos en la carpeta de la librería
+por su directorio local:
+
+```bash
+    "mascotas_react_profile": "file:../mascotas_react_profile",
+```
+
+De este modo usaremos la version local, para que tome los cambios hay que hacer build
 
 ```bash
     npm run build
-```
-
-## Cuando dejemos de usarlo
-
-```bash
-    npm unlink ../mascotas_react_profile
 ```
