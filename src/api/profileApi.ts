@@ -1,7 +1,5 @@
-import axios from "axios";
 import { environment } from "mascotas_react_common";
-
-axios.defaults.headers.common["Content-Type"] = "application/json";
+import { securedAxios } from "mascotas_react_store";
 
 interface Profile {
     name: string;
@@ -22,7 +20,7 @@ interface UpdateBasicProfile {
 
 export async function updateBasicInfo(data: UpdateBasicProfile): Promise<Profile> {
     try {
-        const res = await axios.post(environment.backendUrl + "/v1/profile", data);
+        const res = await securedAxios().post(environment.backendUrl + "/v1/profile", data);
         return Promise.resolve(res.data);
     } catch (err) {
         return Promise.reject(err);
@@ -38,7 +36,7 @@ interface UpdateProfileImageId {
 
 export async function updateProfilePicture(payload: UpdateProfileImage): Promise<UpdateProfileImageId> {
     try {
-        const res = await axios.post(environment.backendUrl + "/v1/profile/picture", payload);
+        const res = await securedAxios().post(environment.backendUrl + "/v1/profile/picture", payload);
         return Promise.resolve(res.data);
     } catch (err) {
         return Promise.reject(err);
@@ -47,7 +45,7 @@ export async function updateProfilePicture(payload: UpdateProfileImage): Promise
 
 export async function getCurrentProfile(): Promise<Profile> {
     try {
-        const res = await axios.get(environment.backendUrl + "/v1/profile");
+        const res = await securedAxios().get(environment.backendUrl + "/v1/profile");
         return Promise.resolve(res.data);
     } catch (err) {
         return Promise.reject(err);

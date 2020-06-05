@@ -24,7 +24,7 @@
     "@types/react-router-dom": "~5.1.5",
     "@types/mascotas_react_common": "git+https://github.com/nmarsollier/mascotas_react_common.git#master",
     "@types/mascotas_react_provinces": "git+https://github.com/nmarsollier/mascotas_react_provinces.git#master",
-    "@types/axios": "~0.14.0",
+    "@types/mascotas_react_store": "git+https://github.com/nmarsollier/mascotas_react_store.git#master",
     "microbundle-crl": "~0.13.10",
     "npm-run-all": "~4.1.5",
     "react-scripts": "~3.4.1",
